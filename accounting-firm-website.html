@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian Ledger &amp; Co. — Trusted Accounting &amp; Financial Solutions</title>
+<meta name="description" content="Expert bookkeeping, tax planning, payroll management, auditing, financial consulting and business registration for businesses and individuals. Book a consultation today.">
+<meta property="og:title" content="Meridian Ledger & Co. — Accounting & Financial Services">
+<meta property="og:description" content="Trusted accounting and financial solutions for businesses and individuals.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B1F3A;
+  --navy-800:#122A4C;
+  --navy-700:#1A3560;
+  --white:#FFFFFF;
+  --gold:#D4AF37;
+  --gold-soft:#E6C96A;
+  --gray:#F8FAFC;
+  --ink:#22314A;
+  --muted:#5B6B85;
+  --line:rgba(11,31,58,.10);
+  --radius:18px;
+  --shadow-sm:0 2px 10px rgba(11,31,58,.06);
+  --shadow-md:0 12px 32px rgba(11,31,58,.10);
+  --shadow-lg:0 24px 60px rgba(11,31,58,.16);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  font-family:'Manrope',system-ui,-apple-system,sans-serif;
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+ul{list-style:none}
+.container{width:min(1180px,92%);margin-inline:auto}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);
+}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--gold);border-radius:2px}
+h1,h2,h3{color:var(--navy);line-height:1.15;letter-spacing:-.02em}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);font-weight:800;margin:.7rem 0 1rem}
+.section{padding:clamp(4rem,8vw,7rem) 0}
+.section-head{max-width:640px;margin-bottom:clamp(2.2rem,5vw,3.5rem)}
+.section-head p{color:var(--muted);font-size:1.06rem}
+.center{margin-inline:auto;text-align:center}
+.center .eyebrow{justify-content:center}
+.center .eyebrow::before{display:none}
+.center .eyebrow::after,.center .eyebrow::before{content:"";width:28px;height:2px;background:var(--gold);border-radius:2px;display:inline-block}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.95rem 1.9rem;border-radius:999px;font-weight:700;font-size:.98rem;
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s var(--ease),color .35s var(--ease);
+  cursor:pointer;border:none;
+}
+.btn svg{transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-gold{background:linear-gradient(135deg,var(--gold),#c39a22);color:var(--navy);box-shadow:0 10px 26px rgba(212,175,55,.35)}
+.btn-gold:hover{transform:translateY(-3px);box-shadow:0 16px 34px rgba(212,175,55,.45)}
+.btn-ghost{background:rgba(255,255,255,.08);color:var(--white);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px)}
+.btn-ghost:hover{background:rgba(255,255,255,.16);transform:translateY(-3px)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--navy-700);transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.btn-outline{background:transparent;color:var(--navy);border:1.5px solid var(--navy)}
+.btn-outline:hover{background:var(--navy);color:var(--white);transform:translateY(-3px)}
+
+/* Reveal animations */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal[data-delay="1"]{transition-delay:.12s}
+.reveal[data-delay="2"]{transition-delay:.24s}
+.reveal[data-delay="3"]{transition-delay:.36s}
+.reveal[data-delay="4"]{transition-delay:.48s}
+
+/* ============ NAV ============ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:100;
+  transition:background .4s var(--ease),box-shadow .4s var(--ease),padding .4s var(--ease);
+  padding:1.1rem 0;
+}
+.nav.scrolled{background:rgba(11,31,58,.88);backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(0,0,0,.25);padding:.65rem 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{display:flex;align-items:center;gap:.7rem;color:var(--white);font-weight:800;font-size:1.15rem;letter-spacing:-.01em}
+.logo-mark{
+  width:40px;height:40px;border-radius:12px;flex:none;
+  background:linear-gradient(135deg,var(--gold),#a8871f);
+  display:grid;place-items:center;color:var(--navy);font-size:1.05rem;font-weight:800;
+  box-shadow:0 6px 16px rgba(212,175,55,.35);
+}
+.logo small{display:block;font-size:.62rem;font-weight:600;letter-spacing:.28em;color:var(--gold-soft);text-transform:uppercase}
+.nav-links{display:flex;gap:1.8rem;align-items:center}
+.nav-links a{color:rgba(255,255,255,.82);font-weight:600;font-size:.94rem;position:relative;padding:.3rem 0;transition:color .3s}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);border-radius:2px;transition:width .35s var(--ease)}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{white-space:nowrap;padding:.7rem 1.4rem;font-size:.9rem}
+.nav-toggle{display:none;background:none;border:none;cursor:pointer;width:44px;height:44px;border-radius:12px;place-items:center}
+.nav-toggle span{display:block;width:22px;height:2px;background:var(--white);margin:5px auto;border-radius:2px;transition:transform .3s var(--ease),opacity .3s}
+.nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav-toggle.open span:nth-child(2){opacity:0}
+.nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;min-height:100svh;display:flex;align-items:center;
+  color:var(--white);isolation:isolate;padding:9rem 0 11rem;
+}
+.hero-bg{position:absolute;inset:0;z-index:-2;overflow:hidden}
+.hero-bg img{width:100%;height:120%;object-fit:cover;will-change:transform}
+.hero::before{
+  content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(100deg,rgba(11,31,58,.94) 0%,rgba(11,31,58,.82) 45%,rgba(11,31,58,.55) 100%);
+}
+.hero-content{max-width:720px}
+.hero .eyebrow{color:var(--gold-soft)}
+.hero h1{
+  color:var(--white);font-size:clamp(2.4rem,5.6vw,4rem);font-weight:800;
+  margin:1rem 0 1.3rem;letter-spacing:-.025em;
+}
+.hero h1 em{font-style:normal;color:var(--gold-soft)}
+.hero p{font-size:clamp(1.02rem,1.6vw,1.2rem);color:rgba(255,255,255,.82);max-width:620px;font-weight:400}
+.hero-actions{display:flex;gap:1rem;margin-top:2.2rem;flex-wrap:wrap}
+.hero-trust{display:flex;align-items:center;gap:.8rem;margin-top:2rem;color:rgba(255,255,255,.7);font-size:.9rem}
+.hero-trust .stars{color:var(--gold);letter-spacing:.15em}
+
+/* Stats bar — glass, overlapping hero bottom */
+.stats{
+  position:relative;z-index:5;margin-top:-5.5rem;
+}
+.stats-card{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:rgba(255,255,255,.9);backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.6);
+  border-radius:20px;box-shadow:var(--shadow-lg);overflow:hidden;
+}
+.stat{padding:2rem 1.4rem;text-align:center;position:relative}
+.stat + .stat::before{content:"";position:absolute;left:0;top:22%;height:56%;width:1px;background:var(--line)}
+.stat-num{font-size:clamp(1.9rem,3.4vw,2.6rem);font-weight:800;color:var(--navy);letter-spacing:-.02em}
+.stat-num span.gold{color:var(--gold)}
+.stat-label{font-size:.86rem;font-weight:600;color:var(--muted);margin-top:.25rem;letter-spacing:.02em}
+
+/* ============ ABOUT ============ */
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,6vw,5rem);align-items:center}
+.about-media{position:relative}
+.about-media .main{border-radius:20px;box-shadow:var(--shadow-lg);aspect-ratio:4/4.6;object-fit:cover;width:100%}
+.about-badge{
+  position:absolute;bottom:-1.6rem;right:-1rem;
+  background:var(--navy);color:var(--white);border-radius:16px;
+  padding:1.2rem 1.5rem;box-shadow:var(--shadow-lg);
+  display:flex;align-items:center;gap:.9rem;max-width:270px;
+  border:1px solid rgba(212,175,55,.35);
+}
+.about-badge .big{font-size:1.9rem;font-weight:800;color:var(--gold);line-height:1}
+.about-badge p{font-size:.82rem;color:rgba(255,255,255,.8);line-height:1.4}
+.about-gold-frame{position:absolute;top:-1.2rem;left:-1.2rem;width:42%;height:42%;border-top:3px solid var(--gold);border-left:3px solid var(--gold);border-radius:20px 0 0 0;z-index:-1}
+.about-copy p{color:var(--muted);margin-bottom:1.1rem;font-size:1.03rem}
+.values{display:grid;grid-template-columns:1fr 1fr;gap:.8rem 1.4rem;margin:1.6rem 0 2rem}
+.values li{display:flex;align-items:center;gap:.7rem;font-weight:600;color:var(--navy);font-size:.97rem}
+.values li svg{flex:none;color:var(--gold)}
+
+/* ============ SERVICES ============ */
+.services{background:var(--gray)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.4rem}
+.svc{
+  background:var(--white);border-radius:var(--radius);padding:2rem 1.7rem;
+  border:1px solid var(--line);box-shadow:var(--shadow-sm);
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);
+  position:relative;overflow:hidden;
+}
+.svc::after{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,var(--gold),var(--gold-soft));
+  transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);
+}
+.svc:hover{transform:translateY(-8px);box-shadow:var(--shadow-md);border-color:rgba(212,175,55,.4)}
+.svc:hover::after{transform:scaleX(1)}
+.svc-icon{
+  width:56px;height:56px;border-radius:16px;display:grid;place-items:center;
+  background:linear-gradient(135deg,rgba(212,175,55,.14),rgba(11,31,58,.06));
+  color:var(--navy);margin-bottom:1.2rem;
+  transition:background .45s var(--ease),color .45s var(--ease),transform .45s var(--ease);
+}
+.svc:hover .svc-icon{background:var(--navy);color:var(--gold);transform:scale(1.06)}
+.svc h3{font-size:1.12rem;font-weight:800;margin-bottom:.5rem}
+.svc p{font-size:.93rem;color:var(--muted)}
+.svc a{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font-size:.88rem;font-weight:700;color:var(--navy)}
+.svc a svg{transition:transform .3s var(--ease)}
+.svc a:hover{color:var(--gold)}
+.svc a:hover svg{transform:translateX(4px)}
+
+/* ============ WHY CHOOSE US ============ */
+.why{background:var(--navy);color:var(--white);position:relative;overflow:hidden}
+.why::before{content:"";position:absolute;top:-200px;right:-200px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(212,175,55,.16),transparent 65%)}
+.why h2{color:var(--white)}
+.why .section-head p{color:rgba(255,255,255,.7)}
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+.why-card{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--radius);padding:2rem 1.6rem;backdrop-filter:blur(10px);
+  transition:transform .45s var(--ease),background .45s var(--ease),border-color .45s var(--ease);
+}
+.why-card:hover{transform:translateY(-8px);background:rgba(255,255,255,.09);border-color:rgba(212,175,55,.5)}
+.why-icon{width:54px;height:54px;border-radius:14px;display:grid;place-items:center;background:rgba(212,175,55,.15);color:var(--gold);margin-bottom:1.2rem}
+.why-card h3{color:var(--white);font-size:1.08rem;font-weight:800;margin-bottom:.55rem}
+.why-card p{font-size:.92rem;color:rgba(255,255,255,.68)}
+
+/* ============ PROCESS ============ */
+.process{background:var(--white)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;position:relative;counter-reset:step}
+.steps::before{
+  content:"";position:absolute;top:34px;left:9%;right:9%;height:2px;z-index:0;
+  background:repeating-linear-gradient(90deg,var(--gold) 0 10px,transparent 10px 20px);
+  opacity:0;transition:opacity 1s var(--ease) .4s;
+}
+.steps.in::before{opacity:.6}
+.step{position:relative;z-index:1;text-align:center;padding:0 .6rem}
+.step-dot{
+  width:68px;height:68px;margin:0 auto 1.2rem;border-radius:50%;
+  background:var(--white);border:2px solid var(--gold);color:var(--navy);
+  display:grid;place-items:center;box-shadow:var(--shadow-md);
+  transition:background .4s var(--ease),color .4s var(--ease),transform .4s var(--ease);
+}
+.step:hover .step-dot{background:var(--navy);color:var(--gold);transform:scale(1.08)}
+.step-num{font-size:.75rem;font-weight:800;letter-spacing:.2em;color:var(--gold);text-transform:uppercase}
+.step h3{font-size:1.1rem;font-weight:800;margin:.35rem 0 .5rem}
+.step p{font-size:.92rem;color:var(--muted)}
+
+/* ============ TESTIMONIALS ============ */
+.testimonials{background:var(--gray)}
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.testi{
+  background:var(--white);border-radius:var(--radius);padding:2rem 1.8rem;
+  border:1px solid var(--line);box-shadow:var(--shadow-sm);position:relative;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease);
+}
+.testi:hover{transform:translateY(-8px);box-shadow:var(--shadow-md)}
+.testi::before{
+  content:"“";position:absolute;top:.4rem;right:1.4rem;font-size:5rem;line-height:1;
+  color:rgba(212,175,55,.18);font-family:Georgia,serif;
+}
+.testi .stars{color:var(--gold);font-size:1rem;letter-spacing:.2em;margin-bottom:1rem}
+.testi blockquote{font-size:.98rem;color:var(--ink);margin-bottom:1.5rem}
+.testi-person{display:flex;align-items:center;gap:.9rem}
+.testi-person img{width:52px;height:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold)}
+.testi-person strong{display:block;color:var(--navy);font-size:.95rem}
+.testi-person span{font-size:.82rem;color:var(--muted)}
+
+/* ============ FAQ ============ */
+.faq{background:var(--white)}
+.faq-list{max-width:820px;margin-inline:auto}
+.faq-item{border:1px solid var(--line);border-radius:16px;margin-bottom:.9rem;background:var(--white);transition:box-shadow .35s var(--ease),border-color .35s var(--ease);overflow:hidden}
+.faq-item.open{box-shadow:var(--shadow-md);border-color:rgba(212,175,55,.45)}
+.faq-q{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;
+  padding:1.25rem 1.5rem;background:none;border:none;cursor:pointer;text-align:left;
+  font-family:inherit;font-size:1.02rem;font-weight:700;color:var(--navy);
+}
+.faq-q .chev{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--gray);color:var(--navy);transition:transform .4s var(--ease),background .4s var(--ease),color .4s var(--ease)}
+.faq-item.open .chev{transform:rotate(180deg);background:var(--gold);color:var(--navy)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
+.faq-a p{padding:0 1.5rem 1.4rem;color:var(--muted);font-size:.97rem}
+
+/* ============ CTA BANNER ============ */
+.cta-banner{position:relative;isolation:isolate;color:var(--white);text-align:center;padding:clamp(4.5rem,9vw,7.5rem) 0;overflow:hidden}
+.cta-banner .bgimg{position:absolute;inset:0;z-index:-2}
+.cta-banner .bgimg img{width:100%;height:100%;object-fit:cover}
+.cta-banner::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(135deg,rgba(11,31,58,.95),rgba(11,31,58,.85))}
+.cta-banner h2{color:var(--white);font-size:clamp(1.9rem,4.5vw,3rem);max-width:720px;margin-inline:auto}
+.cta-banner p{color:rgba(255,255,255,.78);max-width:560px;margin:1rem auto 2.2rem;font-size:1.05rem}
+.cta-banner .gold-line{width:64px;height:3px;background:var(--gold);margin:0 auto 1.6rem;border-radius:2px}
+
+/* ============ CONTACT ============ */
+.contact{background:var(--gray)}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:start}
+.contact-form{
+  background:var(--white);border-radius:20px;padding:2.3rem;box-shadow:var(--shadow-md);
+  border:1px solid var(--line);
+}
+.contact-form h3{font-size:1.35rem;font-weight:800;margin-bottom:.4rem}
+.contact-form > p{color:var(--muted);font-size:.95rem;margin-bottom:1.6rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.field{margin-bottom:1rem}
+.field label{display:block;font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:.35rem}
+.field input,.field select,.field textarea{
+  width:100%;padding:.85rem 1rem;border:1.5px solid var(--line);border-radius:12px;
+  font-family:inherit;font-size:.95rem;color:var(--ink);background:var(--gray);
+  transition:border-color .3s,box-shadow .3s,background .3s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  outline:none;border-color:var(--gold);background:var(--white);box-shadow:0 0 0 4px rgba(212,175,55,.15);
+}
+.field textarea{resize:vertical;min-height:120px}
+.contact-side{display:grid;gap:1.2rem}
+.info-card{background:var(--white);border-radius:18px;padding:1.6rem;border:1px solid var(--line);box-shadow:var(--shadow-sm);display:flex;gap:1rem;align-items:flex-start;transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.info-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+.info-icon{width:46px;height:46px;flex:none;border-radius:12px;display:grid;place-items:center;background:rgba(212,175,55,.14);color:var(--navy)}
+.info-card strong{display:block;color:var(--navy);font-size:.98rem;margin-bottom:.15rem}
+.info-card p,.info-card a{font-size:.92rem;color:var(--muted)}
+.info-card a:hover{color:var(--gold)}
+.map-wrap{border-radius:18px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--line);height:230px}
+.map-wrap iframe{width:100%;height:100%;border:0;filter:saturate(.85)}
+.form-status{display:none;margin-top:1rem;padding:.9rem 1.1rem;border-radius:12px;background:rgba(22,163,74,.1);color:#15803d;font-weight:600;font-size:.92rem}
+.form-status.show{display:block}
+
+/* WhatsApp float */
+.wa-float{
+  position:fixed;bottom:26px;right:26px;z-index:90;
+  width:60px;height:60px;border-radius:50%;
+  background:#25D366;color:#fff;display:grid;place-items:center;
+  box-shadow:0 12px 30px rgba(37,211,102,.45);
+  transition:transform .35s var(--ease),box-shadow .35s var(--ease);
+  animation:wa-pulse 2.6s infinite;
+}
+.wa-float:hover{transform:scale(1.1)}
+@keyframes wa-pulse{
+  0%{box-shadow:0 12px 30px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,.4)}
+  70%{box-shadow:0 12px 30px rgba(37,211,102,.45),0 0 0 18px rgba(37,211,102,0)}
+  100%{box-shadow:0 12px 30px rgba(37,211,102,.45),0 0 0 0 rgba(37,211,102,0)}
+}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--navy);color:rgba(255,255,255,.72);padding:4.5rem 0 0}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.3fr;gap:2.5rem;padding-bottom:3rem}
+.footer h4{color:var(--white);font-size:1rem;font-weight:800;margin-bottom:1.1rem;letter-spacing:.02em}
+.footer .logo{margin-bottom:1rem}
+.footer p{font-size:.92rem}
+.footer-links li{margin-bottom:.6rem}
+.footer-links a{font-size:.92rem;transition:color .3s,padding-left .3s}
+.footer-links a:hover{color:var(--gold);padding-left:5px}
+.newsletter{display:flex;margin-top:1rem;border-radius:999px;overflow:hidden;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15)}
+.newsletter input{flex:1;min-width:0;background:none;border:none;padding:.85rem 1.2rem;color:var(--white);font-family:inherit;font-size:.9rem}
+.newsletter input:focus{outline:none}
+.newsletter input::placeholder{color:rgba(255,255,255,.45)}
+.newsletter button{background:var(--gold);border:none;color:var(--navy);font-weight:800;padding:0 1.4rem;cursor:pointer;font-family:inherit;transition:background .3s}
+.newsletter button:hover{background:var(--gold-soft)}
+.socials{display:flex;gap:.7rem;margin-top:1.4rem}
+.socials a{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);transition:background .3s,transform .3s,color .3s;color:rgba(255,255,255,.85)}
+.socials a:hover{background:var(--gold);color:var(--navy);transform:translateY(-4px)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;font-size:.85rem}
+.footer-bottom .legal{display:flex;gap:1.6rem}
+.footer-bottom a:hover{color:var(--gold)}
+
+/* Focus visibility */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:3px solid var(--gold);outline-offset:2px;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:1000px){
+  .why-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(2,1fr);gap:2.4rem 1.4rem}
+  .steps::before{display:none}
+  .testi-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:840px){
+  .nav-links{
+    position:fixed;inset:0 0 0 auto;width:min(320px,82%);
+    flex-direction:column;justify-content:center;gap:2rem;
+    background:rgba(11,31,58,.97);backdrop-filter:blur(16px);
+    transform:translateX(100%);transition:transform .45s var(--ease);
+  }
+  .nav-links.open{transform:none}
+  .nav-links a{font-size:1.15rem}
+  .nav-toggle{display:grid;z-index:110}
+  .nav-cta{display:none}
+  .stats-card{grid-template-columns:1fr 1fr}
+  .stat + .stat::before{display:none}
+  .stat:nth-child(even)::before{content:"";position:absolute;left:0;top:22%;height:56%;width:1px;background:var(--line)}
+  .about-grid{grid-template-columns:1fr}
+  .about-badge{right:.5rem}
+  .contact-grid{grid-template-columns:1fr}
+  .hero{padding-bottom:12rem}
+}
+@media (max-width:560px){
+  .testi-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .stats-card{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+  .hero-actions .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+  .hero-bg img{transform:none!important}
+}
+</style>
+</head>
+<body>
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#home" class="logo" aria-label="Meridian Ledger & Co. home">
+      <span class="logo-mark">M</span>
+      <span>Meridian Ledger<small>&amp; Co. · Chartered Accountants</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#process">How We Work</a>
+      <a href="#testimonials">Clients</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="#contact" class="btn btn-gold nav-cta">Book a Consultation</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg" aria-hidden="true">
+    <img id="heroImg" src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=2000&q=80" alt="" fetchpriority="high">
+  </div>
+  <div class="container">
+    <div class="hero-content">
+      <span class="eyebrow reveal">Chartered Accountants &amp; Advisors</span>
+      <h1 class="reveal" data-delay="1">Trusted Accounting &amp; Financial Solutions for <em>Businesses &amp; Individuals</em></h1>
+      <p class="reveal" data-delay="2">Helping businesses grow through expert bookkeeping, tax planning, payroll management, auditing, financial consulting, and business registration.</p>
+      <div class="hero-actions reveal" data-delay="3">
+        <a href="#contact" class="btn btn-gold">Book a Consultation
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#contact" class="btn btn-ghost">Get a Free Quote</a>
+      </div>
+      <div class="hero-trust reveal" data-delay="4">
+        <span class="stars" aria-hidden="true">★★★★★</span>
+        <span>Rated 4.9/5 by over 600 verified clients</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<div class="stats">
+  <div class="container">
+    <div class="stats-card reveal">
+      <div class="stat">
+        <div class="stat-num"><span class="counter" data-target="15">0</span><span class="gold">+</span></div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span class="counter" data-target="2500">0</span><span class="gold">+</span></div>
+        <div class="stat-label">Happy Clients</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><span class="counter" data-target="99">0</span><span class="gold">%</span></div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">24<span class="gold">/</span>7</div>
+        <div class="stat-label">Professional Support</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="section about" id="about">
+  <div class="container about-grid">
+    <div class="about-media reveal">
+      <span class="about-gold-frame" aria-hidden="true"></span>
+      <img class="main" src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80" alt="Meridian advisors reviewing financial statements with a client in a modern boardroom" loading="lazy">
+      <div class="about-badge">
+        <span class="big">15+</span>
+        <p>Years guiding businesses to clean books and confident decisions</p>
+      </div>
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow reveal">About Us</span>
+      <h2 class="reveal" data-delay="1">Numbers you can trust. Advice you can act on.</h2>
+      <p class="reveal" data-delay="2">Meridian Ledger &amp; Co. was founded on a simple conviction: every business deserves the financial clarity that large corporations take for granted. For more than fifteen years, our chartered accountants have helped founders, family businesses, and growing companies keep accurate books, stay fully compliant, and plan with confidence.</p>
+      <p class="reveal" data-delay="2">We combine rigorous accounting standards with modern cloud tools, so you always know exactly where your business stands — and where it can go next. No jargon, no surprises, no missed deadlines.</p>
+      <ul class="values reveal" data-delay="3">
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Integrity in every engagement</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Accuracy down to the last cent</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Full regulatory compliance</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Innovation through cloud accounting</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Personalised financial solutions</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Partners, not just providers</li>
+      </ul>
+      <a href="#services" class="btn btn-navy reveal" data-delay="4">Explore Our Services
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="section services" id="services">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Our Services</span>
+      <h2>Everything your finances need, under one roof</h2>
+      <p>From day-to-day bookkeeping to board-level advisory, our services scale with your business at every stage.</p>
+    </div>
+    <div class="services-grid">
+      <article class="svc reveal">
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7M9 11h7"/></svg></div>
+        <h3>Bookkeeping</h3>
+        <p>Accurate, up-to-date records maintained daily on modern cloud platforms — so your numbers are always ready when you need them.</p>
+        <a href="#contact">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="svc reveal" data-delay="1">
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M8 2v4M16 2v4M3 10h18M8 15h3"/></svg></div>
+        <h3>Tax Preparation</h3>
+        <p>Personal and corporate returns filed correctly and on time, with every legitimate deduction and relief claimed on your behalf.</p>
+        <a href="#contact">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="svc reveal" data-delay="2">
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h3>Payroll Management</h3>
+        <p>End-to-end payroll processing — salaries, statutory deductions, payslips, and filings — delivered accurately every cycle.</p>
+        <a href="#contact">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="svc reveal">
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 4 5-8"/></svg></div>
+        <h3>Financial Consulting</h3>
+        <p>Cash-flow forecasting, budgeting, and growth strategy from advisors who understand what the numbers mean for your business.</p>
+        <a href="#contact">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="svc reveal" data-delay="1">
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M8.5 11l2 2 3.5-3.5"/></svg></div>
+        <h3>Audit &amp; Assurance</h3>
+        <p>Independent statutory and internal audits that strengthen governance and give stakeholders complete confidence in your reporting.</p>
+        <a href="#contact">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="svc reveal" data-delay="2">
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M9 21v-4h6v4M9 11h.01M15 11h.01M12 11h.01"/></svg></div>
+        <h3>Business Registration</h3>
+        <p>Company formation handled from name reservation to tax registration — start trading quickly, correctly, and fully compliant.</p>
+        <a href="#contact">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="svc reveal">
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <h3>VAT &amp; Tax Advisory</h3>
+        <p>Proactive VAT registration, returns, and tax-efficiency planning that keeps you compliant while protecting your margins.</p>
+        <a href="#contact">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="svc reveal" data-delay="1">
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h2v4H9zM13 11h2v6h-2z"/></svg></div>
+        <h3>Financial Reporting</h3>
+        <p>Clear monthly and annual statements prepared to international standards — management accounts that actually inform decisions.</p>
+        <a href="#contact">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="svc reveal" data-delay="2">
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>Business Advisory</h3>
+        <p>Strategic guidance on structuring, expansion, and succession — a trusted sounding board for the decisions that shape your future.</p>
+        <a href="#contact">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="svc reveal">
+        <div class="svc-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Company Secretarial Services</h3>
+        <p>Annual returns, board resolutions, and statutory registers maintained meticulously, so your company never falls out of good standing.</p>
+        <a href="#contact">Learn more <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY CHOOSE US ===== -->
+<section class="section why" id="why">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Why Choose Us</span>
+      <h2>The standard your finances deserve</h2>
+      <p>Four commitments we make to every client — and keep, engagement after engagement.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></svg></div>
+        <h3>Certified Professionals</h3>
+        <p>Every engagement is led by chartered, fully certified accountants with deep sector experience.</p>
+      </div>
+      <div class="why-card reveal" data-delay="1">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <h3>Accurate Financial Reporting</h3>
+        <p>Multi-level review on every report means figures you can present to banks, boards, and regulators without hesitation.</p>
+      </div>
+      <div class="why-card reveal" data-delay="2">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></svg></div>
+        <h3>Transparent Pricing</h3>
+        <p>Fixed monthly fees agreed in advance. No hidden charges, no hourly surprises — ever.</p>
+      </div>
+      <div class="why-card reveal" data-delay="3">
+        <div class="why-icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>Secure &amp; Confidential</h3>
+        <p>Bank-grade encryption and strict confidentiality protocols protect your financial data at every step.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROCESS ===== -->
+<section class="section process" id="process">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">How We Work</span>
+      <h2>A clear path from first call to lasting partnership</h2>
+      <p>Our four-step approach means you always know what happens next.</p>
+    </div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-dot"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+        <span class="step-num">Step 01</span>
+        <h3>Consultation</h3>
+        <p>We listen first. A free discovery call to understand your business, goals, and current challenges.</p>
+      </div>
+      <div class="step">
+        <div class="step-dot"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg></div>
+        <span class="step-num">Step 02</span>
+        <h3>Financial Assessment</h3>
+        <p>A thorough review of your books, tax position, and compliance status to identify risks and opportunities.</p>
+      </div>
+      <div class="step">
+        <div class="step-dot"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <span class="step-num">Step 03</span>
+        <h3>Strategic Planning</h3>
+        <p>A tailored roadmap with clear priorities, timelines, and a fixed fee — agreed before any work begins.</p>
+      </div>
+      <div class="step">
+        <div class="step-dot"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+        <span class="step-num">Step 04</span>
+        <h3>Ongoing Support</h3>
+        <p>Dedicated advisors, monthly reporting, and 24/7 support keep your finances healthy long-term.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section testimonials" id="testimonials">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Client Stories</span>
+      <h2>Trusted by the businesses we serve</h2>
+      <p>Real results from founders and finance teams who partnered with Meridian.</p>
+    </div>
+    <div class="testi-grid">
+      <article class="testi reveal">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>Meridian took over our books when everything was three months behind. Within six weeks we had clean accounts, a VAT position we understood, and monthly reports our bank actually complimented.</blockquote>
+        <div class="testi-person">
+          <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=200&q=80" alt="Portrait of Daniel Mwangi" loading="lazy">
+          <div><strong>Daniel Mwangi</strong><span>Managing Director, Atlas Logistics</span></div>
+        </div>
+      </article>
+      <article class="testi reveal" data-delay="1">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>Their tax planning saved us more in one year than their fees cost in three. What I value most is that they explain everything in plain language — I finally feel in control of our finances.</blockquote>
+        <div class="testi-person">
+          <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=200&q=80" alt="Portrait of Sarah Okonkwo" loading="lazy">
+          <div><strong>Sarah Okonkwo</strong><span>Founder, Lumen Interiors</span></div>
+        </div>
+      </article>
+      <article class="testi reveal" data-delay="2">
+        <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+        <blockquote>From company registration to our first audit, Meridian handled it all. Payroll runs like clockwork and every deadline is met before we even think about it. Genuinely a partner, not a vendor.</blockquote>
+        <div class="testi-person">
+          <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=200&q=80" alt="Portrait of James Njoroge" loading="lazy">
+          <div><strong>James Njoroge</strong><span>CEO, Halcyon Tech Group</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section faq" id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">FAQ</span>
+      <h2>Questions we hear most often</h2>
+      <p>Straight answers before you even pick up the phone.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">What accounting services do you offer for small businesses?
+          <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><p>We provide complete outsourced finance support: bookkeeping, payroll, VAT returns, annual financial statements, tax filing, and on-call advisory. Most small businesses start with a fixed monthly bookkeeping-and-tax package and add services as they grow.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">When are my tax returns due, and can you file them for me?
+          <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><p>Yes — we prepare and file personal and corporate returns on your behalf. Deadlines depend on your jurisdiction and entity type, so during onboarding we build a compliance calendar and send reminders well before every filing date. Late-filing penalties become a thing of the past.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">How does outsourced payroll work?
+          <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><p>You send us hours, salaries, or changes each cycle; we calculate pay, statutory deductions, and benefits, issue payslips to staff, and file all required returns. Whether you have two employees or two hundred, payroll arrives accurately and on time, every time.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">How is your pricing structured?
+          <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><p>Almost all of our work is on fixed monthly or per-project fees quoted upfront after your free assessment. The fee reflects transaction volume, staff count, and services required — and it never changes without your written agreement.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">Can you help me register a new company?
+          <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><p>Absolutely. We handle name reservation, incorporation documents, tax and VAT registration, and any sector licences you need. Most registrations complete within one to three weeks, and we can set up your accounting system on day one so you start with clean books.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-q" aria-expanded="false">How do I book a consultation, and is the first one really free?
+          <span class="chev"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><p>Yes — your first consultation is completely free with no obligation. Use the contact form below, call us, or message us on WhatsApp, and we'll schedule a call within one business day at a time that suits you.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+  <div class="bgimg" aria-hidden="true"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1800&q=80" alt="" loading="lazy"></div>
+  <div class="container reveal">
+    <div class="gold-line" aria-hidden="true"></div>
+    <h2>Ready to Simplify Your Business Finances?</h2>
+    <p>Schedule a free consultation today and discover how much clearer — and more profitable — your business can be with the right partner behind the numbers.</p>
+    <div class="hero-actions" style="justify-content:center">
+      <a href="#contact" class="btn btn-gold">Book Consultation
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <a href="#contact" class="btn btn-ghost">Contact Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Contact Us</span>
+      <h2>Let's talk about your numbers</h2>
+      <p>Tell us a little about your business and we'll respond within one business day.</p>
+    </div>
+    <div class="contact-grid">
+      <form class="contact-form reveal" id="contactForm" novalidate>
+        <h3>Request a free consultation</h3>
+        <p>All enquiries are confidential and obligation-free.</p>
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-name">Full name</label>
+            <input id="cf-name" name="name" type="text" placeholder="Jane Doe" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="cf-email">Email address</label>
+            <input id="cf-email" name="email" type="email" placeholder="jane@company.com" required autocomplete="email">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="cf-phone">Phone</label>
+            <input id="cf-phone" name="phone" type="tel" placeholder="+254 700 000 000" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="cf-service">Service needed</label>
+            <select id="cf-service" name="service">
+              <option>Bookkeeping</option>
+              <option>Tax Preparation</option>
+              <option>Payroll Management</option>
+              <option>Financial Consulting</option>
+              <option>Audit &amp; Assurance</option>
+              <option>Business Registration</option>
+              <option>VAT &amp; Tax Advisory</option>
+              <option>Financial Reporting</option>
+              <option>Business Advisory</option>
+              <option>Company Secretarial</option>
+              <option>Other / Not sure yet</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="cf-msg">How can we help?</label>
+          <textarea id="cf-msg" name="message" placeholder="Tell us briefly about your business and what you need…"></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%">Send Message
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+        </button>
+        <div class="form-status" id="formStatus">Thank you — your message has been received. We'll be in touch within one business day.</div>
+      </form>
+      <div class="contact-side">
+        <div class="info-card reveal">
+          <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><strong>Office Address</strong><p>Meridian House, 4th Floor, Riverside Drive, Nairobi</p></div>
+        </div>
+        <div class="info-card reveal" data-delay="1">
+          <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><strong>Phone</strong><p><a href="tel:+254700123456">+254 700 123 456</a><br><a href="tel:+254207654321">+254 20 765 4321</a></p></div>
+        </div>
+        <div class="info-card reveal" data-delay="2">
+          <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></div>
+          <div><strong>Email</strong><p><a href="mailto:hello@meridianledger.co">hello@meridianledger.co</a></p></div>
+        </div>
+        <div class="info-card reveal" data-delay="3">
+          <div class="info-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><strong>Business Hours</strong><p>Mon – Fri: 8:00 am – 6:00 pm<br>Sat: 9:00 am – 1:00 pm · Sun: Closed</p></div>
+        </div>
+        <div class="map-wrap reveal" data-delay="4">
+          <iframe title="Office location map" src="https://www.google.com/maps?q=Riverside+Drive,+Nairobi&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WhatsApp float -->
+<a class="wa-float" href="https://wa.me/254700123456?text=Hello%20Meridian%20Ledger%2C%20I%27d%20like%20to%20book%20a%20consultation." target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+  <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.5 0 1.47 1.07 2.9 1.22 3.1.15.2 2.11 3.22 5.1 4.51.71.31 1.27.49 1.7.63.72.23 1.37.2 1.88.12.57-.09 1.76-.72 2.01-1.42.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35zM12.05 21.79h-.01a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.77 9.77 0 0 1-1.5-5.22c0-5.4 4.4-9.79 9.81-9.79a9.74 9.74 0 0 1 6.93 2.87 9.73 9.73 0 0 1 2.87 6.94c0 5.4-4.4 9.8-9.8 9.8zm8.34-18.13A11.7 11.7 0 0 0 12.05 .2C5.55.2.26 5.48.26 11.98c0 2.08.54 4.1 1.57 5.89L.16 24l6.28-1.65a11.77 11.77 0 0 0 5.6 1.43h.01c6.5 0 11.79-5.29 11.79-11.79 0-3.15-1.23-6.11-3.45-8.33z"/></svg>
+</a>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="#home" class="logo"><span class="logo-mark">M</span><span>Meridian Ledger<small>&amp; Co. · Chartered Accountants</small></span></a>
+        <p>Premium accounting, tax, and advisory services helping businesses and individuals build financial clarity and lasting success.</p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a>
+          <a href="#" aria-label="X (Twitter)"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.24 2.25h3.31l-7.23 8.26L22.83 21.75h-6.66l-5.22-6.82-5.97 6.82H1.66l7.73-8.84L1.25 2.25h6.83l4.71 6.23 5.45-6.23zm-1.16 17.52h1.83L7.08 4.13H5.12l11.96 15.64z"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.7 4.53-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.2-4.35-2.62-6.78-6.98-6.98C15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1 0 18.16 12 6.16 6.16 0 0 0 12 5.84zm0 10.15A4 4 0 1 1 16 12a4 4 0 0 1-4 3.99zm6.4-11.85a1.44 1.44 0 1 0 1.44 1.44 1.44 1.44 0 0 0-1.44-1.44z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#why">Why Choose Us</a></li>
+          <li><a href="#process">How We Work</a></li>
+          <li><a href="#testimonials">Client Stories</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="#services">Bookkeeping</a></li>
+          <li><a href="#services">Tax Preparation</a></li>
+          <li><a href="#services">Payroll Management</a></li>
+          <li><a href="#services">Audit &amp; Assurance</a></li>
+          <li><a href="#services">Business Registration</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Stay Informed</h4>
+        <p>Monthly tax deadlines, compliance updates, and practical finance tips — straight to your inbox.</p>
+        <form class="newsletter" id="newsletterForm">
+          <label for="nl-email" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
+          <input id="nl-email" type="email" placeholder="Your email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <ul class="footer-links" style="margin-top:1.3rem">
+          <li><a href="#faq">Resources &amp; FAQ</a></li>
+          <li><a href="#contact">Book a Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Meridian Ledger &amp; Co. All rights reserved.</span>
+      <div class="legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Sticky nav */
+  var nav = document.getElementById('nav');
+  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 40); };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  /* Mobile menu */
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  toggle.addEventListener('click', function(){
+    var open = links.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+  links.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      links.classList.remove('open');
+      toggle.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* Reveal on scroll */
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal, .steps').forEach(function(el){ io.observe(el); });
+
+  /* Animated counters */
+  function animateCounter(el){
+    var target = parseInt(el.dataset.target, 10);
+    if(prefersReduced){ el.textContent = target.toLocaleString(); return; }
+    var dur = 1800, start = null;
+    function frame(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased).toLocaleString();
+      if(p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ animateCounter(e.target); cio.unobserve(e.target); }
+    });
+  }, {threshold:.4});
+  document.querySelectorAll('.counter').forEach(function(el){ cio.observe(el); });
+
+  /* Hero parallax */
+  var heroImg = document.getElementById('heroImg');
+  if(!prefersReduced && heroImg){
+    window.addEventListener('scroll', function(){
+      var y = window.scrollY;
+      if(y < window.innerHeight * 1.2){
+        heroImg.style.transform = 'translateY(' + (y * 0.25) + 'px)';
+      }
+    }, {passive:true});
+  }
+
+  /* FAQ accordion */
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    var btn = item.querySelector('.faq-q');
+    var panel = item.querySelector('.faq-a');
+    btn.addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(other){
+        other.classList.remove('open');
+        other.querySelector('.faq-a').style.maxHeight = null;
+        other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if(!isOpen){
+        item.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  /* Contact form */
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('formStatus');
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!form.checkValidity()){ form.reportValidity(); return; }
+    status.classList.add('show');
+    form.reset();
+    setTimeout(function(){ status.classList.remove('show'); }, 6000);
+  });
+
+  /* Newsletter */
+  var nl = document.getElementById('newsletterForm');
+  nl.addEventListener('submit', function(e){
+    e.preventDefault();
+    var input = nl.querySelector('input');
+    if(!input.checkValidity()){ nl.reportValidity && nl.reportValidity(); return; }
+    var btn = nl.querySelector('button');
+    btn.textContent = 'Subscribed ✓';
+    input.value = '';
+    setTimeout(function(){ btn.textContent = 'Subscribe'; }, 4000);
+  });
+})();
+</script>
+</body>
+</html>
